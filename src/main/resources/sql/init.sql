@@ -18,4 +18,4 @@ CREATE TABLE IF NOT EXISTS order_products(
 );
 
 -- DB cleanup
---DROP TABLE if EXISTS orders, products, order_products;
+-- DROP TABLE if EXISTS orders, products, order_products;
