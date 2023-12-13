@@ -1,4 +1,4 @@
-package com.hillel.glovo.controller;
+package com.hillel.glovo.controller.products;
 
 import com.hillel.glovo.controller.response.ApiResponse;
 import com.hillel.glovo.dto.OrderDto;
@@ -14,76 +14,13 @@ import java.util.List;
 import java.util.stream.Stream;
 
 @RequiredArgsConstructor
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/products")
 @RestController
-public class GlovoController {
+public class ProductsController {
 
     private final GlovoService glovoService;
 
-    @GetMapping("/orders")
-    public ApiResponse<List<OrderDto>> getOrders() {
-        ApiResponse<List<OrderDto>> response = new ApiResponse<>();
-        List<OrderDto> orderDtos = glovoService.getOrders();
-        if (!CollectionUtils.isEmpty(orderDtos)) {
-            response.setSuccess(true);
-            response.setData(orderDtos);
-            response.setMessages(Stream.of(HttpStatus.OK.toString()).toList());
-        }
-        return response;
-    }
-
-    @GetMapping("/orders/{id}")
-    public ApiResponse<OrderDto> getOrderById(@PathVariable("id") Integer id) {
-        ApiResponse<OrderDto> response = new ApiResponse<>();
-        OrderDto orderDto = glovoService.getOrderById(id);
-        if (orderDto != null) {
-            response.setSuccess(true);
-            response.setData(orderDto);
-            response.setMessages(Stream.of(HttpStatus.OK.toString()).toList());
-        }
-        return response;
-    }
-
-    @PostMapping("/orders")
-    public ApiResponse<OrderDto> createOrder(@RequestBody OrderDto orderDto) {
-        ApiResponse<OrderDto> response = new ApiResponse<>();
-        glovoService.createOrder(orderDto);
-        if (glovoService.getOrderById(orderDto.getId()).getDate().equals(orderDto.getDate()) &&
-                glovoService.getOrderById(orderDto.getId()).getCost() == orderDto.getCost()) {
-            response.setSuccess(true);
-            response.setData(orderDto);
-            response.setMessages(Stream.of(HttpStatus.CREATED.toString()).toList());
-        }
-        return response;
-    }
-
-    @PutMapping("/orders/{id}")
-    public ApiResponse<OrderDto> updateOrder(@PathVariable("id") Integer id, @RequestBody OrderDto orderDto) {
-        ApiResponse<OrderDto> response = new ApiResponse<>();
-        glovoService.updateOrder(id, orderDto);
-        if (glovoService.getOrderById(id).getDate().equals(orderDto.getDate()) &&
-                glovoService.getOrderById(id).getCost() == orderDto.getCost()) {
-            response.setSuccess(true);
-            response.setData(orderDto);
-            response.setMessages(Stream.of(HttpStatus.OK.toString()).toList());
-        }
-        return response;
-    }
-
-    @DeleteMapping("/orders/{id}")
-    public ApiResponse<OrderDto> deleteOrder(@PathVariable("id") Integer id) {
-        ApiResponse<OrderDto> response = new ApiResponse<>();
-        glovoService.deleteOrder(id);
-        try {
-            glovoService.getOrderById(id);
-        } catch (EmptyResultDataAccessException emptyResultDataAccessException) {
-            response.setSuccess(true);
-            response.setMessages(Stream.of(HttpStatus.OK.toString()).toList());
-        }
-        return response;
-    }
-
-    @GetMapping("/products")
+    @GetMapping()
     public ApiResponse<List<ProductDto>> getProducts() {
         ApiResponse<List<ProductDto>> response = new ApiResponse<>();
         List<ProductDto> productDtos = glovoService.getProducts();
@@ -95,7 +32,7 @@ public class GlovoController {
         return response;
     }
 
-    @GetMapping("/products/{id}")
+    @GetMapping("/{id}")
     public ApiResponse<ProductDto> getProductById(@PathVariable("id") Integer id) {
         ApiResponse<ProductDto> response = new ApiResponse<>();
         ProductDto productDto = glovoService.getProductById(id);
@@ -107,7 +44,7 @@ public class GlovoController {
         return response;
     }
 
-    @PostMapping("/products")
+    @PostMapping()
     public ApiResponse<ProductDto> createProduct(@RequestBody ProductDto productDto) {
         ApiResponse<ProductDto> response = new ApiResponse<>();
         glovoService.createProduct(productDto);
@@ -119,7 +56,7 @@ public class GlovoController {
         return response;
     }
 
-    @PutMapping("/products/{id}")
+    @PutMapping("/{id}")
     public ApiResponse<ProductDto> updateProduct(@PathVariable("id") Integer id, @RequestBody ProductDto productDto) {
         ApiResponse<ProductDto> response = new ApiResponse<>();
         glovoService.updateProduct(id, productDto);
@@ -131,7 +68,7 @@ public class GlovoController {
         return response;
     }
 
-    @DeleteMapping("/products/{id}")
+    @DeleteMapping("/{id}")
     public ApiResponse<ProductDto> deleteProduct(@PathVariable("id") Integer id) {
         ApiResponse<ProductDto> response = new ApiResponse<>();
         glovoService.deleteProduct(id);
