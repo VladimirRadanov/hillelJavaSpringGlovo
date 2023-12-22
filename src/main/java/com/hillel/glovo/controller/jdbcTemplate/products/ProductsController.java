@@ -1,4 +1,4 @@
-package com.hillel.glovo.controller.products;
+package com.hillel.glovo.controller.jdbcTemplate.products;
 
 import com.hillel.glovo.controller.response.ApiResponse;
 import com.hillel.glovo.dto.OrderDto;
