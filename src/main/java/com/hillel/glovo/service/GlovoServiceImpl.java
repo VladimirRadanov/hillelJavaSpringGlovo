@@ -1,7 +1,8 @@
+/*
 package com.hillel.glovo.service;
 
-import com.hillel.glovo.dto.OrderDto;
-import com.hillel.glovo.dto.ProductDto;
+import com.hillel.glovo.dto.order.OrderDto;
+import com.hillel.glovo.dto.order.ProductDto;
 import com.hillel.glovo.repository.jdbc.JDBCRepository;
 import com.hillel.glovo.repository.memory.OrderList;
 import lombok.RequiredArgsConstructor;
@@ -73,3 +74,4 @@ public class GlovoServiceImpl implements GlovoService {
         jdbcRepository.deleteProduct(id);
     }
 }
+*/

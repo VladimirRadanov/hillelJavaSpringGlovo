@@ -1,4 +1,5 @@
-package com.hillel.glovo.entity.data;
+/*
+package com.hillel.glovo.model.data;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
@@ -17,4 +18,4 @@ public class Product {
     private String name;
     private Double cost;
 
-}
+}*/

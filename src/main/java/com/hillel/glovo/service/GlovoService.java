@@ -1,7 +1,8 @@
+/*
 package com.hillel.glovo.service;
 
-import com.hillel.glovo.dto.OrderDto;
-import com.hillel.glovo.dto.ProductDto;
+import com.hillel.glovo.dto.order.OrderDto;
+import com.hillel.glovo.dto.order.ProductDto;
 
 import java.util.List;
 
@@ -26,3 +27,4 @@ public interface GlovoService {
 
     public void deleteProduct(Integer id);
 }
+*/

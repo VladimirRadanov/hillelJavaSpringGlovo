@@ -1,8 +1,9 @@
+/*
 package com.hillel.glovo.controller.jdbcTemplate.orders;
 
 import com.hillel.glovo.controller.response.ApiResponse;
-import com.hillel.glovo.dto.OrderDto;
-import com.hillel.glovo.dto.ProductDto;
+import com.hillel.glovo.dto.order.OrderDto;
+import com.hillel.glovo.dto.order.ProductDto;
 import com.hillel.glovo.service.GlovoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -84,3 +85,4 @@ public class OrdersController {
     }
 
 }
+*/

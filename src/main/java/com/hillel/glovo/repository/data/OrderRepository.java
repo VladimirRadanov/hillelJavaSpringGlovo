@@ -1,6 +1,7 @@
+/*
 package com.hillel.glovo.repository.data;
 
-import com.hillel.glovo.entity.data.Order;
+import com.hillel.glovo.model.data.Order;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jdbc.repository.query.Query;
@@ -17,3 +18,4 @@ public interface OrderRepository extends CrudRepository<Order, Integer> {
 
     Page<Order> findAll(Pageable pageable);
 }
+*/

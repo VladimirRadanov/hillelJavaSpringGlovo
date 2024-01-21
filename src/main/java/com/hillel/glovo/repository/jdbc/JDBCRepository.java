@@ -1,7 +1,8 @@
+/*
 package com.hillel.glovo.repository.jdbc;
 
-import com.hillel.glovo.dto.OrderDto;
-import com.hillel.glovo.dto.ProductDto;
+import com.hillel.glovo.dto.order.OrderDto;
+import com.hillel.glovo.dto.order.ProductDto;
 import com.hillel.glovo.repository.mappers.OrderDtoRowMapper;
 import com.hillel.glovo.repository.mappers.ProductDtoRowMapper;
 import lombok.RequiredArgsConstructor;
@@ -86,3 +87,4 @@ public class JDBCRepository {
         jdbcTemplate.update(DELETE_PRODUCT + id);
     }
 }
+*/

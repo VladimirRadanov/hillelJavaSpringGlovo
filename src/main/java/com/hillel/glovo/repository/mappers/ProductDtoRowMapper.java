@@ -1,6 +1,7 @@
+/*
 package com.hillel.glovo.repository.mappers;
 
-import com.hillel.glovo.dto.ProductDto;
+import com.hillel.glovo.dto.order.ProductDto;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
@@ -18,3 +19,4 @@ public class ProductDtoRowMapper implements RowMapper<ProductDto> {
         return productDto;
     }
 }
+*/

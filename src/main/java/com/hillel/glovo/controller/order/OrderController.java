@@ -1,5 +1,4 @@
-/*
-package com.hillel.glovo.controller.data;
+package com.hillel.glovo.controller.order;
 
 import com.hillel.glovo.controller.response.ApiResponse;
 import com.hillel.glovo.dto.order.OrderDto;
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RequiredArgsConstructor
-@RequestMapping("/api/v2/orders")
+@RequestMapping("/api/v1/orders")
 @RestController
 public class OrderController {
 
@@ -59,4 +58,3 @@ public class OrderController {
         orderService.delete(orderId);
     }
 }
-*/

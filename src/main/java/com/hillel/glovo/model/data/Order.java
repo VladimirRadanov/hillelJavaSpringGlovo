@@ -1,4 +1,5 @@
-package com.hillel.glovo.entity.data;
+/*
+package com.hillel.glovo.model.data;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
@@ -22,4 +23,4 @@ public class Order {
     private Double cost;
     @MappedCollection(idColumn = "orders")
     private List<Product> product;
-}
+}*/

@@ -7,12 +7,12 @@ VALUES ('2023-12-07', 100.80),
 INSERT INTO orders (id, date, cost)
 VALUES (22, '2023-12-07', 100.80);
 
-INSERT INTO PRODUCTS(name, cost)
+INSERT INTO PRODUCT(name, cost)
 VALUES ('name1', 10.10),
        ('name2', 20.20),
        ('name3', '50.45');
 
-INSERT INTO order_products(order_id, product_id)
+INSERT INTO orders_product(order_id, product_id)
 VALUES (1,1),
        (1,2),
        (1,3),

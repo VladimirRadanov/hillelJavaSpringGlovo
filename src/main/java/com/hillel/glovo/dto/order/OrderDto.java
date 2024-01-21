@@ -1,4 +1,4 @@
-package com.hillel.glovo.dto;
+package com.hillel.glovo.dto.order;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,8 +13,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderDto {
-    private int id;
+    private Integer id;
     private LocalDate date;
-    private double cost;
+    private Double cost;
     private List<ProductDto> products;
 }

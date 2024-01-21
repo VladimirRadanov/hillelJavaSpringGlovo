@@ -1,6 +1,6 @@
-drop table if exists order_products;
+/*drop table if exists order_products;
 drop table if exists orders;
-drop table if exists products;
+drop table if exists product;
 
 CREATE TABLE IF NOT EXISTS orders
 (
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS orders
     cost NUMERIC
 );
 
-CREATE TABLE IF NOT EXISTS products
+CREATE TABLE IF NOT EXISTS product
 (
     id   SERIAL PRIMARY KEY,
     orders integer references orders(id),
@@ -17,3 +17,4 @@ CREATE TABLE IF NOT EXISTS products
     name TEXT,
     cost NUMERIC
 );
+*/

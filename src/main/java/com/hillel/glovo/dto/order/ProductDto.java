@@ -1,4 +1,4 @@
-package com.hillel.glovo.dto;
+package com.hillel.glovo.dto.order;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductDto {
-    private int id;
+    private Integer id;
     private String name;
-    private double cost;
+    private Double cost;
 }

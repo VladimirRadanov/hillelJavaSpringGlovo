@@ -1,10 +1,11 @@
 package com.hillel.glovo.service.order.data;
 
 import com.hillel.glovo.converter.OrderConverter;
-import com.hillel.glovo.dto.OrderDto;
-import com.hillel.glovo.dto.ProductDto;
-import com.hillel.glovo.entity.data.Order;
-import com.hillel.glovo.repository.data.OrderRepository;
+import com.hillel.glovo.dto.order.OrderDto;
+import com.hillel.glovo.dto.order.ProductDto;
+import com.hillel.glovo.model.jpa.Order;
+import com.hillel.glovo.repository.order.spring_jpa.OrderRepository;
+import com.hillel.glovo.service.order.jpa.OrderServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -116,7 +117,7 @@ class OrderServiceImplTest {
         when(orderConverter.fromModel(order)).thenReturn(dto);
         when(orderConverter.toModel(order, dto)).thenReturn(order);
 
-        dto.setCost(99);
+        dto.setCost(99.0);
         orderService.update(ORDER_ID, dto);
         OrderDto result = orderService.getOrderById(ORDER_ID);
 

@@ -1,9 +1,9 @@
 package com.hillel.glovo.converter;
 
-import com.hillel.glovo.dto.OrderDto;
-import com.hillel.glovo.dto.ProductDto;
-import com.hillel.glovo.entity.data.Order;
-import com.hillel.glovo.entity.data.Product;
+import com.hillel.glovo.dto.order.OrderDto;
+import com.hillel.glovo.dto.order.ProductDto;
+import com.hillel.glovo.model.jpa.Order;
+import com.hillel.glovo.model.jpa.Product;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

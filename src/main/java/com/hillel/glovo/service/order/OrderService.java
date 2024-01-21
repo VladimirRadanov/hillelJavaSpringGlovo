@@ -1,7 +1,7 @@
 package com.hillel.glovo.service.order;
 
-import com.hillel.glovo.dto.OrderDto;
-import com.hillel.glovo.entity.data.Order;
+import com.hillel.glovo.dto.order.OrderDto;
+import com.hillel.glovo.model.jpa.Order;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

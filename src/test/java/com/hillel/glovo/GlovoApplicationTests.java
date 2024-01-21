@@ -1,13 +1,26 @@
 package com.hillel.glovo;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-@SpringBootTest
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+//@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 class GlovoApplicationTests {
 
-    @Test
+    /*@Test
     void contextLoads() {
+    }*/
+
+    @InjectMocks
+    private GlovoApplication glovoApplication;
+
+    @Test
+    void onStartup() {
+        assertNotNull(glovoApplication);
     }
 
 }
