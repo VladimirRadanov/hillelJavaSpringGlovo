@@ -1,11 +1,12 @@
-/*
 package com.hillel.glovo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -24,11 +25,13 @@ public class WebSecurityConfig {
                 // loginPage("/login")
                         form.permitAll())
                 .authorizeRequests(authorize -> authorize
-                        .requestMatchers("/").permitAll()
-                        .requestMatchers( "/api/v1/table/save").hasRole("ADMIN")
+                        .regexMatchers("/").permitAll()
+                        .regexMatchers("/api/v1/orders").hasRole("USER")
+//                        .antMatchers( "/api/v1/table/save").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .logout(logout -> logout.permitAll())
                 .httpBasic(Customizer.withDefaults())
+                .csrf(AbstractHttpConfigurer::disable)//resolving HTTP 403 for POST with Basic Authentication
                 .build();
     }
 
@@ -50,4 +53,3 @@ public class WebSecurityConfig {
         return new InMemoryUserDetailsManager(user);
     }
 }
-*/
