@@ -9,6 +9,7 @@ import javax.persistence.Table;
 
 @Getter
 @Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

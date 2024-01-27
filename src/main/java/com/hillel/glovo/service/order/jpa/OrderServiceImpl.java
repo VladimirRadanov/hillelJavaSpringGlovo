@@ -27,6 +27,7 @@ public class OrderServiceImpl implements OrderService {
     public OrderDto getOrderById(Integer id) {
         Order order = orderRepository.findById(id).orElseThrow();
 //        return orderConverter.fromModel(order);
+        log.debug("Get order by id: " +id + " Order: "+ order);
         return orderMapper.orderToOrderDto(order);
     }
 
@@ -67,5 +68,6 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void delete(Integer id) {
         orderRepository.deleteById(id);
+        log.info("Order with id: " + id + " is deleted");
     }
 }
